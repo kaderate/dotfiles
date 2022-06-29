@@ -38,10 +38,10 @@ augroup vimrcEx
   au BufReadPost * if $ft != 'gitcommit' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
   " Markdown setup
-  autocmd BufRead,BufNewFile *.md set filetype=markdown
-  autocmd FileType markdown setlocal spelllang=fr
+  " autocmd BufRead,BufNewFile *.md set filetype=markdown
+  " autocmd FileType markdown setlocal spelllang=fr
   " set indent & formatting automatically (especially when removing words)
-  autocmd FileType markdown set formatoptions+=a
+  " autocmd FileType markdown set formatoptions+=a
 
   " Set syntax highlighting for specific file types
   autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
@@ -114,6 +114,7 @@ nnoremap <silent> <Leader>l :TestLast<CR>
 nnoremap <silent> <Leader>a :TestSuite<CR>
 nnoremap <silent> <Leader>gt :TestVisit<CR>
 let test#strategy = "vimterminal"
+let test#vim#term_position = "vertical"
 
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<Space>
@@ -137,7 +138,7 @@ nnoremap [r :ALEPreviousWrap<CR>
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
-set spellfile=$HOME/.vim-spell-en.utf-8.add
+" set spellfile=$HOME/.vim-spell-en.utf-8.add
 
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell

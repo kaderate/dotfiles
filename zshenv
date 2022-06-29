@@ -25,5 +25,3 @@ Please move that configuration to \`.zshrc.local' like so:
 
 MSG
 fi
-
-unset _old_path

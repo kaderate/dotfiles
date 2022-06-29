@@ -23,10 +23,12 @@ Plug 'pbrisbin/vim-mkdir'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
+
+" Plug 'tpope/vim-fugitive'
+
 Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
+" Plug 'tpope/vim-rails'
+" Plug 'tpope/vim-rake'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
@@ -34,6 +36,12 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/tComment'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'def-lkb/ocp-indent-vim'
+Plug '/usr/local/opt/fzf' " brew-installed version
+" Plug 'rnestler/michelson.vim'
+Plug 'zxqfl/tabnine-vim'
+Plug 'maxbrunsfeld/vim-yankstack'
+" Plug 'posva/vim-vue'
+Plug 'tomasiser/vim-code-dark'
 
 if g:has_async
   Plug 'w0rp/ale'

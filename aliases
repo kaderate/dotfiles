@@ -1,32 +1,80 @@
 # Unix
-alias ll="ls -al"
-alias ln="ln -v"
-alias mkdir="mkdir -p"
-alias e="$EDITOR"
-alias v="$VISUAL"
+alias ll='ls -alh'
+alias ln='ln -v'
+alias mkdir='mkdir -p'
+alias e='$EDITOR'
+alias v='$VISUAL'
+alias ww='watch -n1'
+alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+function mkcd() { mkdir $1 && cd $1 }
+
+# Net
+alias tcpdumpen='sudo tcpdump -qtni en0'
+# dnstope en0
+
+# Doc (pandoc)
+pdf() {
+  pandoc -o $1.pdf $1
+  open $1.pdf
+}
 
 # Bundler
-alias be="bundle exec"
+alias be='bundle exec'
 
 # Rails
-alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
-alias s="rspec"
-alias rc="rails c"
-alias rs="rails s"
-alias fs="foreman start"
-
-# Heroku
-alias h="heroku"
+alias migrate='rake db:migrate db:rollback && rake db:migrate db:test:prepare'
+alias s='rspec'
+alias rc='rails c'
+alias rs='rails s'
+alias fs='foreman start'
 
 # Git
+alias gst='git status'
+alias gd='git diff'
+alias gdc='git diff --cached'
 alias gci='git commit'
 alias grh='git reset HEAD'
-alias gdc='git diff --cached'
 alias gs='git stash'
 alias gsp='git stash pop'
+alias ga='git add'
+alias gco='git checkout'
+alias gb='git branch'
 
 # Docker
-alias dc='docker-compose'
+alias dc='docker compose'
+alias dcp='docker compose ps'
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+alias dcl='docker compose logs -f'
+alias dcr='docker compose run --rm'
+alias dce='docker compose exec'
+alias dcspec='docker compose run --rm -e RAILS_ENV=test app bundle exec rspec'
+alias dcrails='docker compose exec app bundle exec rails'
+alias dcb='docker compose exec web bundle'
+alias dcbe='docker compose exec web bundle exec'
+# Kubernetes
+alias k='kubectl'
+
+# MTK/Tezos
+alias tcp='~/Code/blockchain/tezos_private_chain/tezos-client -P 8094'
+alias liquiditydc='docker run --rm -it --mount type=bind,source="$(pwd)",target=/var/www/os-api registry.gitlab.com/moneytrack/moneytrack-os-api/app:latest liquidity'
+alias tc='dc -f /Users/abdelkader/Code/blockchain/tezos_private_chain/docker-compose.yml exec tezos_node tezos-client'
+alias tcop='tc get receipt for'
+alias tcstore='tc get script storage for'
+alias tccode='tc get script code for'
+alias tcbalance='tc get balance for'
+
+# MTK projects
+# alias mos='cd ~/Code/mrh/moneytrack-os-api'
+# alias mfront='cd ~/Code/mrh/moneytrack-demo-front'
+alias hos='cd ~/Code/moneytrack/health/health-os'
+alias hfrontweb='cd ~/Code/moneytrack/health/health-front'
+alias hhostapp='cd ~/Code/moneytrack/health/flutter_host_application'
+alias hsdk='cd ~/Code/moneytrack/health/moneytrack_sdk'
+alias hprac='cd ~/Code/moneytrack/health/prac'
+
+alias chain='cd ~/Code/moneytrack/blockchain/tezos_private_chain'
+alias infra='cd ~/Code/moneytrack/fleet-infra'
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
