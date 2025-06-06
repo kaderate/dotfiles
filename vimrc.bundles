@@ -15,33 +15,44 @@ let g:has_async = v:version >= 800 || has('nvim')
 call plug#begin('~/.vim/bundle')
 
 " Define bundles via Github repos
-Plug 'christoomey/vim-run-interactive'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 Plug 'janko-m/vim-test'
 Plug 'pangloss/vim-javascript'
-Plug 'pbrisbin/vim-mkdir'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
+" Ex: Plug 'tpope/vim-bundler'
+" Ex: Plug 'tpope/vim-eunuch'
 
-" Plug 'tpope/vim-fugitive'
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 
-Plug 'tpope/vim-projectionist'
-" Plug 'tpope/vim-rails'
-" Plug 'tpope/vim-rake'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-surround'
-Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/tComment'
+Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
+
+" Theme
+Plug 'morhetz/gruvbox'
+
+" Lang support
+Plug 'tomlion/vim-solidity'
+
+" Git plugin
+Plug 'tpope/vim-fugitive'
+" EditorConfig support
 Plug 'editorconfig/editorconfig-vim'
+" Pretty status line
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-rails'
+" EX: Plug 'tpope/vim-repeat'
+" EX: Plug 'tpope/vim-surround'
+" EX: Plug 'vim-ruby/vim-ruby'
+" EX: Plug 'vim-scripts/tComment'
 Plug 'def-lkb/ocp-indent-vim'
-Plug '/usr/local/opt/fzf' " brew-installed version
 " Plug 'rnestler/michelson.vim'
-Plug 'zxqfl/tabnine-vim'
-Plug 'maxbrunsfeld/vim-yankstack'
-" Plug 'posva/vim-vue'
-Plug 'tomasiser/vim-code-dark'
+" EX: Plug 'maxbrunsfeld/vim-yankstack'
+
+" Well-integrated filesystem search
+Plug 'dyng/ctrlsf.vim'
 
 if g:has_async
   Plug 'w0rp/ale'

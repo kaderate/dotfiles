@@ -37,3 +37,9 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[help]
+  # Enable autocorrection for git commands
+  autocorrect = 1
+[branch]
+  # Controls whether branches are setup to rebase upon git pull
+  autosetuprebase = always
