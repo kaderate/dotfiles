@@ -23,7 +23,8 @@ Plug 'pangloss/vim-javascript'
 " Ex: Plug 'tpope/vim-bundler'
 " Ex: Plug 'tpope/vim-eunuch'
 
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+" Needs Python, not working
+" Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 
 Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
 

@@ -42,14 +42,19 @@ _load_settings() {
 _load_settings "$HOME/.zsh/configs"
 
 # Local config
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+source ~/.zshrc.local
+source ~/.zshrc.devenv
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
-[[ -f ~/.aliases.local ]] && source ~/.aliases.local
+[[ -f ~/dotfiles-local/.aliases.local ]] && source ~/dotfiles-local/.aliases.local
 
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+export PATH="$HOME/.local/bin:$PATH"
+-e 
+# opencode
+export PATH=/Users/abdelkader.kettal/.opencode/bin:$PATH

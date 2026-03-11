@@ -3,7 +3,6 @@ alias ll='ls -alh'
 alias ln='ln -v'
 alias mkdir='mkdir -p'
 alias e='$EDITOR'
-alias v='$VISUAL'
 alias ww='watch -n1'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 function mkcd() { mkdir $1 && cd $1 }
@@ -22,11 +21,8 @@ pdf() {
 alias be='bundle exec'
 
 # Rails
-alias migrate='rake db:migrate db:rollback && rake db:migrate db:test:prepare'
-alias s='rspec'
 alias rc='rails c'
 alias rs='rails s'
-alias fs='foreman start'
 
 # Git
 alias gst='git status'
@@ -39,6 +35,9 @@ alias gsp='git stash pop'
 alias ga='git add'
 alias gco='git checkout'
 alias gb='git branch'
+alias gss='git stash'
+alias gsp='git stash pop'
+alias gl='git log --decorate --all'
 
 # Docker
 alias dc='docker compose'
@@ -55,29 +54,5 @@ alias dcbe='docker compose exec web bundle exec'
 # Kubernetes
 alias k='kubectl'
 
-# MTK/Tezos
-alias tcp='~/Code/blockchain/tezos_private_chain/tezos-client -P 8094'
-alias liquiditydc='docker run --rm -it --mount type=bind,source="$(pwd)",target=/var/www/os-api registry.gitlab.com/moneytrack/moneytrack-os-api/app:latest liquidity'
-alias tc='dc -f /Users/abdelkader/Code/blockchain/tezos_private_chain/docker-compose.yml exec tezos_node tezos-client'
-alias tcop='tc get receipt for'
-alias tcstore='tc get script storage for'
-alias tccode='tc get script code for'
-alias tcbalance='tc get balance for'
-
-# MTK projects
-# alias mos='cd ~/Code/mrh/moneytrack-os-api'
-# alias mfront='cd ~/Code/mrh/moneytrack-demo-front'
-alias hos='cd ~/Code/moneytrack/health/health-os'
-alias hfrontweb='cd ~/Code/moneytrack/health/health-front'
-alias hhostapp='cd ~/Code/moneytrack/health/flutter_host_application'
-alias hsdk='cd ~/Code/moneytrack/health/moneytrack_sdk'
-alias hprac='cd ~/Code/moneytrack/health/prac'
-
-alias chain='cd ~/Code/moneytrack/blockchain/tezos_private_chain'
-alias infra='cd ~/Code/moneytrack/fleet-infra'
-
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
-
-# Include custom aliases
-[[ -f ~/.aliases.local ]] && source ~/.aliases.local
