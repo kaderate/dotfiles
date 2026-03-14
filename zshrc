@@ -41,10 +41,6 @@ _load_settings() {
 }
 _load_settings "$HOME/.zsh/configs"
 
-# Local config
-source ~/.zshrc.local
-source ~/.zshrc.devenv
-
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 [[ -f ~/dotfiles-local/.aliases.local ]] && source ~/dotfiles-local/.aliases.local
@@ -55,6 +51,3 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 export PATH="$HOME/.local/bin:$PATH"
--e 
-# opencode
-export PATH=/Users/abdelkader.kettal/.opencode/bin:$PATH

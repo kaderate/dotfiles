@@ -6,6 +6,7 @@ alias e='$EDITOR'
 alias ww='watch -n1'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 function mkcd() { mkdir $1 && cd $1 }
+alias v='nvim'
 
 # Net
 alias tcpdumpen='sudo tcpdump -qtni en0'
